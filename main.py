@@ -94,8 +94,7 @@ def libsvm_row_from_sparse(i, row, label):
     for c, v in zip(cols, data):
         # libsvm is 1-based feature index or 0-based depending on parser; LightGBM supports zero-based if configured
         parts.append(f"{c}:{v:.6g}")
-    return " ".join(parts) + "
-"
+    return " ".join(parts) + " "
 
 # write sparse chunk to libsvm file (append)
 def append_sparse_chunk_to_libsvm(path, X_sparse, y):
@@ -110,8 +109,7 @@ def append_sparse_chunk_to_libsvm(path, X_sparse, y):
             parts = [str(int(y[i]))]
             for c, v in zip(cols, data):
                 parts.append(f"{c}:{v:.6g}")
-            f.write(" ".join(parts) + "
-")
+            f.write(" ".join(parts) + " ")
 
 # -------------------- Main steps --------------------
 
